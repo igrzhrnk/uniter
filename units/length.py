@@ -3,7 +3,7 @@ class Kilometer:
     _alias = "km"
     _amount = 1000
 
-    def __init__(self, amount: float):
+    def __init__(self, amount: float | int):
         self.amount = amount
 
     def convert_to(self, unit_name: str):
@@ -23,7 +23,7 @@ class Meter:
     _alias = "m"
     _amount = 100
 
-    def __init__(self, amount: float):
+    def __init__(self, amount: float | int):
         self.amount = amount
 
     def convert_to(self, unit_name: str):
@@ -43,7 +43,7 @@ class Centimeter:
     _alias = "cm"
     _amount = 100
 
-    def __init__(self, amount: float):
+    def __init__(self, amount: float | int):
         self.amount = amount
 
     def convert_to(self, unit_name: str):
@@ -63,7 +63,7 @@ class Millimeter:
     _alias = "mm"
     _amount = 10
 
-    def __init__(self, amount: float):
+    def __init__(self, amount: float | int):
         self.amount = amount
 
     def convert_to(self, unit_name: str):

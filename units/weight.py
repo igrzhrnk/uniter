@@ -3,7 +3,7 @@ class Kilogram:
     _alias = "kg"
     _amount = 1000
 
-    def __init__(self, amount: float):
+    def __init__(self, amount: float | int):
         self.amount = amount
 
     def convert_to(self, unit_name: str):
@@ -19,7 +19,7 @@ class Gramm:
     _alias = "g"
     _amount = 1000
 
-    def __init__(self, amount: float):
+    def __init__(self, amount: float | int):
         self.amount = amount
 
     def convert_to(self, unit_name: str):
