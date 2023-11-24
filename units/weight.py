@@ -28,3 +28,18 @@ class Gramm:
                 return self.amount
             case "kg" | "kilogram":
                 return self.amount / self._amount
+
+
+def get_aliases() -> list:
+    import inspect
+    import sys
+
+    aliases_list = {}
+
+    for _, obj in inspect.getmembers(sys.modules[__name__], inspect.isclass):
+        am = obj.__class__.__getattribute__(obj, "_amount")
+        aliases_list[(obj.__class__.__getattribute__(obj, "_alias"))] = am
+
+    al = sorted(aliases_list.items(), key=lambda a: a[1])
+
+    return [a for a in dict(al).keys()]
