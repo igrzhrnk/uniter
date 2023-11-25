@@ -10,12 +10,12 @@ class Kilogram:
         match unit_name:
             case "kg" | "kilogram":
                 return self.amount
-            case "g" | "gramm":
+            case "g" | "gram":
                 return self.amount * self._amount
 
 
-class Gramm:
-    _name = "gramm"
+class Gram:
+    _name = "gram"
     _alias = "g"
     _amount = 1000
 
@@ -24,7 +24,7 @@ class Gramm:
 
     def convert_to(self, unit_name: str):
         match unit_name:
-            case "g" | "gramm":
+            case "g" | "gram":
                 return self.amount
             case "kg" | "kilogram":
                 return self.amount / self._amount

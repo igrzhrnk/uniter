@@ -12,9 +12,9 @@ def main():
         help="Unit type",
         required=True,
     )
-    pars.add_argument("-m", "--main", type=str, help="Unit main type", required=True)
+    pars.add_argument("-m", "--main", type=str, help="Main unit type", required=True)
     pars.add_argument(
-        "-d", "--dest", type=str, help="Unit destination type", required=True
+        "-d", "--dest", type=str, help="Destination unit type", required=True
     )
     pars.add_argument(
         "-v", "--value", type=float, help="Value being converted", required=True
@@ -30,8 +30,8 @@ def main():
                 case "kg" | "kilogram":
                     w = weight.Kilogram(args.value)
                     print(w.convert_to(args.dest))
-                case "g" | "gramm":
-                    w = weight.Gramm(args.value)
+                case "g" | "gram":
+                    w = weight.Gram(args.value)
                     print(w.convert_to(args.dest))
         case "length":
             from units import length
@@ -40,7 +40,7 @@ def main():
                 case "mm" | "millimeter":
                     l = length.Millimeter(args.value)
                     print(l.convert_to(args.dest))
-                case "cm" | "cantimeter":
+                case "cm" | "centimeter":
                     l = length.Centimeter(args.value)
                     print(l.convert_to(args.dest))
                 case "m" | "meter":

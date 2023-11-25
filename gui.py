@@ -91,11 +91,11 @@ class Convert(QFrame):
         self.list_convert_from.setGeometry(75, 70, 100, 40)
         self.list_convert_from.addItems(weight.get_aliases())
 
-        self.lbl_convet_to = QLabel(text="To: ", parent=self)
-        self.lbl_convet_to.setAlignment(
+        self.lbl_convert_to = QLabel(text="To: ", parent=self)
+        self.lbl_convert_to.setAlignment(
             Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignCenter
         )
-        self.lbl_convet_to.setGeometry(177, 70, 63, 40)
+        self.lbl_convert_to.setGeometry(177, 70, 63, 40)
 
         self.list_convert_to = QComboBox(self)
         self.list_convert_to.setGeometry(242, 70, 100, 40)
@@ -126,17 +126,17 @@ class Convert(QFrame):
         self.convert_btn.setGeometry(10, 300, 330, 40)
 
     def convert(self):
-        def str2number(namb: str) -> float | int:
-            res = 0
+        def str2number(numb: str) -> float | int:
+            result = 0
 
-            if namb == "":
-                res = 0
-            elif "." in namb:
-                res = float(namb)
+            if numb == "":
+                result = 0
+            elif "." in numb:
+                result = float(numb)
             else:
-                res = int(namb)
+                result = int(numb)
 
-            return res
+            return result
 
         inp_value = str2number(self.unit_amount.text())
         unit_from = self.list_convert_from.currentText()
@@ -145,7 +145,7 @@ class Convert(QFrame):
 
         match unit_from:
             case "g":
-                g = weight.Gramm(inp_value)
+                g = weight.Gram(inp_value)
                 res = f"{g.convert_to(unit_to)}{unit_to}"
             case "kg":
                 kg = weight.Kilogram(inp_value)
